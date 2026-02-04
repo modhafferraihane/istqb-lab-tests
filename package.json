@@ -1,0 +1,17 @@
+{
+  "name": "istqb-lab3",
+  "version": "1.0.0",
+  "description": "Lab ISTQB - Tests automatisés avec GitHub Actions",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "keywords": ["istqb", "testing", "playwright", "github-actions", "ci"],
+  "author": "raihane",
+  "license": "MIT"
+}
