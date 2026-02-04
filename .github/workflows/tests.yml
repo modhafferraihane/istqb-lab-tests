@@ -63,7 +63,20 @@ jobs:
         run: npx playwright test
 
       # --------------------------------------------------------
-      # Étape 6 : Sauvegarder le rapport HTML (en cas d'échec)
+      # Étape 6 : Message de succès
+      # --------------------------------------------------------
+      - name: Tests réussis
+        if: success()
+        run: |
+          echo "=========================================="
+          echo "       TOUS LES TESTS ONT REUSSI !       "
+          echo "=========================================="
+          echo ""
+          echo "Bravo ! Votre code est valide."
+          echo "Les tests automatises sont passes avec succes."
+
+      # --------------------------------------------------------
+      # Étape 7 : Sauvegarder le rapport HTML (en cas d'échec)
       # --------------------------------------------------------
       - name: Sauvegarde du rapport
         uses: actions/upload-artifact@v4
