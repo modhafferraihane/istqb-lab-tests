@@ -14,6 +14,17 @@ const VALID_USERNAME = 'tomsmith';
 const VALID_PASSWORD = 'SuperSecretPassword!';
 
 // ============================================================
+// Hook qui s'exécute après chaque test
+// ============================================================
+test.afterEach(async ({}, testInfo) => {
+  if (testInfo.status === 'passed') {
+    console.log(`[SUCCES] ${testInfo.title} - Test reussi !`);
+  } else {
+    console.log(`[ECHEC] ${testInfo.title} - Test echoue !`);
+  }
+});
+
+// ============================================================
 // TC-LOGIN-001 - Test de login valide (Test Positif)
 // ============================================================
 test('TC-LOGIN-001 - login valide', async ({ page }) => {
